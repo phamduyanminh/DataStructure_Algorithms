@@ -14,7 +14,7 @@ class SinglyLinkedList{
         this.head = newNode;
         //*Having tail points to same place as head
         this.tail = this.head;
-        this.length = 1;
+        this.length = 0;
     }
 
     //*Push a new node
@@ -138,7 +138,7 @@ class SinglyLinkedList{
         return temp;
     }
 
-    //*
+    //*Reversing the linked list
     reverse(){
         let temp = this.head;
         this.head = this.tail;
