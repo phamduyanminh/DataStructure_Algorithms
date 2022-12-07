@@ -5,21 +5,21 @@
 
 class Node{
     constructor(value){
-        this.value = value;
+        this.data = value;
         this.next = null;
     }
 }
 
 class Stack{
     contructor(value){
-        const newNode = Node(value);
+        const newNode = new Node(value);
         this.top = newNode;
         this.length = 1;
     }
 
     push(value){
-        const newNode = Node(value);
-        if(This.length === 0){
+        const newNode = new Node(value);
+        if(this.length === 0){
             this.top = newNode;
         }else{
             newNode.next = this.top
@@ -30,11 +30,22 @@ class Stack{
     }
 
     pop(){
-        if(This.length === 0){return undefined}
-        var temp = this.top;
+        if(this.length === 0) return 'The stack is empty';
+        let temp = this.top;
         this.top = this.top.next;
         temp.next = null;
         this.length--;
         return temp;
     }
+
+    peek(){
+        if(this.length === 0) return undefined;
+        return this.top;
+    }
 }
+
+let myStack = new Stack(1);
+myStack.push(2);
+myStack.push(3);
+myStack.push(4);
+console.log(myStack.peek());

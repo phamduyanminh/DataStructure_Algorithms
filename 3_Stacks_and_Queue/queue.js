@@ -1,20 +1,20 @@
 //*FIFO - First In First Out
 
 class Node{
-    contructor(value){
-        this.value = value;
+    constructor(value){
+        this.data = value;
         this.next = null;
     }
 }
 
 
 class Queue{
-    contructor(value){
+   constructor(value){
         const newNode = new Node(value);
         this.first = newNode;
         this.last = newNode;
         this.length = 1;
-    }
+   }
 
     //*Adding
     enqueue(value){
@@ -33,16 +33,20 @@ class Queue{
     //*Removing
     dequeue(){
         if(this.length === 0) return undefined;
-
-        var temp = this.first;
-        if(this.length === 1) {
+        let temp = this.first;
+        if(this.length === 1){
             this.first = null;
             this.last = null;
         }else{
-        this.first = this.first.next;
-        temp.next = null;
+            this.first = this.first.next;
+            temp.next = null;
         }
         this.length--;
         return temp;
     }
 }
+
+let myQueue = new Queue(4);
+myQueue.enqueue(14);
+myQueue.enqueue(44);
+console.log(myQueue);
