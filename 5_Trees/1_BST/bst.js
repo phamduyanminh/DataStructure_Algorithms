@@ -1,16 +1,22 @@
-//*Big(O): O(log n) <=> O(2^n)
+//ANCHOR Big(O): O(log n) <=> O(2^n)
 
-//*Inserting: O(log n)
+//ANCHOR Inserting: O(log n)
 
-//*Removing: O(log n)
+//ANCHOR Removing: O(log n)
 
-//*Searching: worst case - O(n) || best case - O(log n)
+//ANCHOR Searching: worst case - O(n) || best case - O(log n)
+
+//Question: What is a full binary tree?
+//*Answer: A full tree is when every item is either pointing to both left and right node or point to null.
+
+//? What is a perfect tree?
+//*Anser: Perfect tree is when every item is poiting to both left and right node, and both branches must have a same level of nodes
 
 class Node{
-    contructor(value){
-        this.value = value;
-        this.right = null;
+    constructor(value){
+        this.data = value;
         this.left = null;
+        this.right = null;
     }
 }
 
@@ -19,26 +25,13 @@ class BST{
         this.root = null;
     }
 
-    inserting(value){
+    insert(value){
         const newNode = new Node(value);
-        var temp;
 
-        if(this.root == null){
+        if(!this.root){
             this.root = newNode;
         }
 
-        if(value < this.root.value){
-            temp = this.root.left;
-            while(temp == null){
-                temp = temp.left;
-            }
-            temp = newNode;
-        }else if(value > this.root.value){
-            this.root.right = newNode;
-        }else{
-            return undefined;
-        }
-
-        return this;
+        while()
     }
 }
